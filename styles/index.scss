@@ -1,0 +1,303 @@
+@import "var.scss";
+@import "credits.scss";
+
+//Reset CSS
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    text-decoration: none;
+    font-weight: inherit;
+}
+
+html,
+body {
+    width: 100vw;
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
+body {
+    font-family: $Font;
+    font-size: 0.9rem;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(to bottom, $Soft_Violet, $Soft_Blue) no-repeat;
+}
+
+//Styling
+
+.parent_section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffff;
+    border-radius: 20px;
+    max-width: 90%;
+    padding: 1em 1.5em 3.5em 1.5em;
+
+    section {
+        &:nth-child(1) {
+            // IMAGES SECTION
+            position: relative;
+
+            .Background_Desktop_Version,
+            .Illustration_Desktop_Version,
+            .Box_Illustration_Desktop {
+                display: none;
+            }
+
+            .BackgroundMobileVersion {
+                position: relative;
+                top: 50%;
+                left: 0;
+            }
+
+            .IllustrationMobileVersion {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translateY(-65%);
+                width: 100%;
+            }
+        }
+
+        &:nth-child(2) {
+            //FAQ SECTION
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 1.5em;
+
+            header {
+                h1 {
+                    font-size: clamp(2rem, 2.5vw, 3rem);
+                    font-weight: 700;
+                }
+            }
+            main {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.2em;
+                .summary {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1em;
+                    position: relative;
+                    border-bottom: $Light_Grayish_Blue 1px solid;
+                    padding: 0 0 1.2em 0;
+                    width: 100%;
+                    height: 2em;
+                    overflow: hidden;
+                    transition: 400ms all cubic-bezier(0.075, 0.82, 0.165, 1);
+
+                    &:has(input:checked) {
+                        height: clamp(5em, 5.5vw, 5.5em);
+                        p:first-child {
+                            font-weight: 700;
+                            
+                        }
+                        p:last-of-type{
+                            transform: scale(1);
+                        }
+                    }
+
+                    p {
+                        transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+                        font-size: clamp(0.7rem, 0.2rem + 0.7vw, 0.9rem) !important;
+                        &:last-of-type{
+                            transform: scale(0);
+                        }
+                    }
+                    input {
+                        cursor: pointer;
+                        position: absolute;
+                        top: 0;
+                        width: 100%;
+                        height: 1.3em;
+                        right: 0;
+                        z-index: 1;
+                        filter: opacity(0);
+                    }
+
+                    label {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        color: $Soft_Red;
+                        img {
+                            transition: all 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+                        }
+                    }
+
+                    input:checked + label {
+                        img {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 62em) { //Laptop
+    .parent_section {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        background-color: #ffff;
+        border-radius: 20px;
+        max-width: 100%;
+        width: 75%;
+        padding: 0em;
+        box-shadow: 0 30px 20px 0 rgba(0, 0, 0, 0.13);
+
+        section {
+            &:nth-child(1) {
+                // IMAGES SECTION
+                max-width: 100%;
+                width: 100%;
+
+                div {
+                    position: relative;
+                    width: clamp(60%, 100vw, 100%);
+                    overflow: hidden;
+                    padding: 3em;
+                }
+
+                .Background_Desktop_Version,
+                .Illustration_Desktop_Version,
+                .Box_Illustration_Desktop {
+                    display: block;
+                    max-width: 100%;
+                }
+
+                .Background_Desktop_Version {
+                    position: absolute;
+                    transform: translateX(-50%) translateY(-20%) scale(1.3);
+                }
+
+                .Illustration_Desktop_Version {
+                    position: relative;
+                    right: 25%;
+                    width: 100%;
+                }
+
+                .Box_Illustration_Desktop {
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    width: 30%;
+                    transform: translateX(-55%) translateY(-20%) scale(1);
+                    filter: drop-shadow(0 0 0);
+                }
+
+                .BackgroundMobileVersion,
+                .IllustrationMobileVersion {
+                    display: none;
+                }
+            }
+
+            &:nth-child(2) {
+                //FAQ SECTION
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 3em;
+                width: 100%;
+
+                header {
+                    h1 {
+                        font-size: clamp(2rem, 2.5vw, 3rem);
+                        font-weight: 700;
+                    }
+                }
+                main {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 1.2em;
+                    max-width: 60%;
+                    .summary {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1em;
+                        position: relative;
+                        border-bottom: $Light_Grayish_Blue 1px solid;
+                        padding: 0 0 1.2em 0;
+                        width: 100%;
+                        height: 2em;
+                        overflow: hidden;
+                        transition: 400ms all cubic-bezier(0.075, 0.82, 0.165, 1);
+
+                        &:has(input:hover) {
+                            p:first-child {
+                                color: $Soft_Red;
+                            }
+                        }
+
+                        p {
+                            transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+                            font-size: clamp(0.7rem, 0.2rem + 0.7vw, 0.9rem) !important;
+                        }
+                        input {
+                            cursor: pointer;
+                            position: absolute;
+                            top: 0;
+                            width: 100%;
+                            height: 1.3em;
+                            right: 0;
+                            z-index: 1;
+                            filter: opacity(0);
+                        }
+
+                        label {
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            color: $Soft_Red;
+                            img {
+                                transition: all 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+                            }
+                        }
+
+                        input:checked + label {
+                            img {
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 87.5em) { // Desktop
+    .parent_section {
+        width: 80%;
+        section {
+            &:nth-child(1) {
+                // IMAGES SECTION
+
+                .Illustration_Desktop_Version {
+                    right: 22%;
+                }
+
+                .Box_Illustration_Desktop {
+                    transform: translateX(-60%) translateY(-20%) scale(1);
+                }
+
+            }
+
+            &:nth-child(2) {
+                //FAQ SECTION
+                padding: 2em;
+            }
+        }
+    }
+}

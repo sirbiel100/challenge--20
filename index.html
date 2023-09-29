@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Frontend challenge solution. Made with HTML and SCSS">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GC - FAQ Accordion Card</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <section class="parent_section">
+        <section>
+            <div>
+                <img src="./images/bg-pattern-desktop.svg" class="Background_Desktop_Version">
+                <img src="./images/bg-pattern-mobile.svg" class="BackgroundMobileVersion">
+                <img src="./images/illustration-woman-online-desktop.svg" class="Illustration_Desktop_Version"
+                    alt="Illustration">
+                <img src="./images/illustration-woman-online-mobile.svg" class="IllustrationMobileVersion"
+                    alt="Illustration">
+            </div>
+            <img src="./images/illustration-box-desktop.svg" class="Box_Illustration_Desktop" alt="Illustration">
+        </section>
+        <section>
+            <header>
+                <h1>FAQ</h1>
+            </header>
+            <main>
+
+                <div class="summary">
+                    <p>How many team members can I invite?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo.</p>
+
+                    <input type="checkbox" id="first-arrow">
+                    <label for="first-arrow">
+                        <img src="./images/icon-arrow-down.svg" alt="arrow">
+                    </label>
+
+                </div>
+
+                <div class="summary">
+                    <p id="sP">What's the maximum file upload size?</p>
+                    <p>No more than 2GB. All filles in your account must fit your allotted storage space.</p>
+
+                    <input type="checkbox" id="second-arrow" onclick="ShowAll()">
+                    <label for="second-arrow">
+                        <img src="./images/icon-arrow-down.svg" alt="arrow">
+                    </label>
+
+                </div>
+
+                <div class="summary">
+                    <p>How do I reset my password?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+
+                    <input type="checkbox" id="third-arrow">
+                    <label for="third-arrow">
+                        <img src="./images/icon-arrow-down.svg" alt="arrow">
+                    </label>
+
+                </div>
+
+                <div class="summary">
+                    <p>Can I cancel my subscription?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+
+                    <input type="checkbox" id="fourth-arrow">
+                    <label for="fourth-arrow">
+                        <img src="./images/icon-arrow-down.svg" alt="arrow">
+                    </label>
+
+                </div>
+
+                <div class="summary">
+                    <p>Do you provide additional support?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+
+                    <input type="checkbox" id="fiveth-arrow">
+                    <label for="fiveth-arrow">
+                        <img src="./images/icon-arrow-down.svg" alt="arrow">
+                    </label>
+
+                </div>
+
+            </main>
+        </section>
+    </section>
+
+    <section class="creditSection">
+        <div class="Loading"></div>
+        <div class="creditDiv">
+            <p>Challenged by <a href="https://www.frontendmentor.io/" target='_blank'>Frontendmentor</a>. Coded by <a href="https://gabriel-crispim-portfolio-sirbiel100.vercel.app/" target='_blank'>Crispim.</a>😁
+            </p>
+        </div>
+    </section>
+</body>
+
+</html>

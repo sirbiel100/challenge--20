@@ -1,0 +1,113 @@
+.creditSection {
+  position: absolute;
+  bottom: 3em;
+  right: 3em;
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.158);
+  background: linear-gradient(to right, #000000, #fcfcfc);
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.creditSection::after {
+  content: "G C";
+  color: rgb(255, 213, 134);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+.creditSection::before {
+  content: "G C";
+  color: rgba(0, 0, 0, 0.404);
+  filter: blur(5px);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+.creditSection .Loading {
+  position: absolute;
+  width: 4em;
+  height: 4em;
+  border: 2px solid rgb(100, 100, 100);
+  border-top: 2px solid rgb(255, 213, 134);
+  animation: infiniteBorder 5s infinite linear;
+  border-radius: 50%;
+  transition-delay: 1s;
+}
+.creditSection .creditDiv {
+  opacity: 0;
+  margin-left: 0.8em;
+  transform: translateX(-30em);
+}
+.creditSection .creditDiv p {
+  color: #7c5d5d;
+  cursor: default;
+}
+.creditSection .creditDiv p a {
+  text-decoration: none;
+  color: rgb(255, 213, 134);
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4039215686));
+}
+.creditSection:hover {
+  height: 5em;
+  width: 30em;
+  border-radius: 15px;
+  border: 1px solid black;
+}
+.creditSection:hover::after {
+  display: none;
+}
+.creditSection:hover::before {
+  display: none;
+}
+.creditSection:hover .Loading {
+  display: none;
+}
+.creditSection:hover .creditDiv {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+@keyframes infiniteBorder {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 600px) {
+  .creditSection {
+    position: static;
+    bottom: 0;
+    right: 50%;
+    width: 25em;
+    border-radius: 15px;
+  }
+  .creditSection .creditDiv {
+    display: flex;
+    font-size: 14px;
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .creditSection::after {
+    display: none;
+  }
+  .creditSection::before {
+    display: none;
+  }
+  .creditSection:hover {
+    width: 25em;
+    height: 4em;
+    border: none;
+  }
+  .Loading {
+    display: none;
+  }
+}/*# sourceMappingURL=credits.css.map */
