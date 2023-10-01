@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Click Here](https://your-solution-url.com)
-- Live Site URL: [Click Here](https://your-live-site-url.com)
+- Solution URL: [Click Here](https://www.frontendmentor.io/solutions/faq-accordion-card-scss-and-html-dGlaitEPP9)
+- Live Site URL: [Click Here](https://sirbiel100.github.io/challenge--20/)
 
 ## My process
 
